@@ -11,6 +11,6 @@ dependencies:
 test:
   override:
     - composer --version
-    - composer run test-with-coverage
+    - composer run test:coverage
   post:
     - bash <(curl -s https://codecov.io/bash) -t c11181e9-9f26-4f9c-9b4b-c93bbc8bd47f
