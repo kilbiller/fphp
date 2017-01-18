@@ -1,0 +1,14 @@
+machine:
+  php:
+    version: 7.1.0
+
+test:
+  override:
+    - composer --version
+    - composer run test-with-coverage
+
+dependencies:
+  override:
+    - composer install --no-interaction
+  cache_directories:
+    - vendor

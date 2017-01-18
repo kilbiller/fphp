@@ -26,6 +26,7 @@
 		]
 	},
 	"scripts": {
-		"test": "kahlan"
+		"test": "kahlan",
+		"test-with-coverage": "kahlan --coverage=3 --clover=clover.xml",
 	}
 }
