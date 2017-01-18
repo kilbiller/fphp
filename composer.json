@@ -18,10 +18,12 @@
 	"autoload": {
     	"psr-4": {"fphp\\": "src/"},
 		"files": [
-			"src/curry_n.php",
 			"src/curry.php",
+			"src/curryN.php",
 			"src/filter.php",
 			"src/first.php",
+			"src/flatMap.php",
+			"src/flatten.php",
 			"src/flow.php",
 			"src/last.php",
 			"src/map.php",

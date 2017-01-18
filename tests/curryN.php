@@ -1,12 +1,12 @@
 <?php
 
-use function fphp\curry_n;
+use function fphp\curryN;
 
-describe('curry_n', function () {
+describe('curryN', function () {
 	it('should curry a function with 2 args', function () {
 		$f = function($a, $b) { return $a + $b; };
 
-		$curried = curry_n($f, 2);
+		$curried = curryN($f, 2);
 
 		$res = $curried(1);
 		$res = $res(3);
@@ -17,7 +17,7 @@ describe('curry_n', function () {
 	it('should curry a function with 3 args', function () {
 		$f = function($a, $b, $c) { return $a + $b + $c; };
 
-		$curried = curry_n($f, 3);
+		$curried = curryN($f, 3);
 
 		$res = $curried(1, 3);
 		$res = $res(4);

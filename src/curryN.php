@@ -15,7 +15,7 @@ namespace fphp;
  * @param callable $function the function you want to curry
  * @return callable a curryied version of the given function
  */
-function curry_n(callable $function, $count) {
+function curryN(callable $function, $count) {
 	$accumulator = function (array $arguments) use ($count, $function, &$accumulator) {
         return function (...$newArguments) use ($count, $function, $arguments, $accumulator) {
             $arguments = array_merge($arguments, $newArguments);
