@@ -21,6 +21,9 @@
 			"src/curry_n.php",
 			"src/curry.php",
 			"src/filter.php",
+			"src/first.php",
+			"src/flow.php",
+			"src/last.php",
 			"src/map.php",
 			"src/reduce.php"
 		]
