@@ -1,0 +1,31 @@
+{
+    "name": "kilbiller/fphp",
+    "description": "Functional programming in php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rémy Peru",
+            "email": "peru.remy@gmail.com"
+        }
+    ],
+	"require": {
+		"php": ">=7.1"
+	},
+    "require-dev": {
+        "kahlan/kahlan": "^3.1"
+    },
+	"autoload": {
+    	"psr-4": {"fphp\\": "src/"},
+		"files": [
+			"src/curry_n.php",
+			"src/curry.php",
+			"src/filter.php",
+			"src/map.php",
+			"src/reduce.php"
+		]
+	},
+	"scripts": {
+		"test": "kahlan"
+	}
+}
