@@ -20,7 +20,7 @@ Requires php >= 7.0
 ## Tests
 
 To run the tests simply do ```composer run test```.
-To see coverage do ```composer run test:coverage```.
+You can also check code coverage by running ```composer run test:coverage```.
 
 ## Functions
 
