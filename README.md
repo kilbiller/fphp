@@ -12,6 +12,10 @@ Requires php 7.1 (for now, might change it to 7.0 or even 5.6).
 * fphp allows you to easily compose functions
 * Point free programming is awesome
 
+## How to install
+
+```composer require kilbiller/fphp```
+
 ## Tests
 
 To run the tests simply do ```composer run test```.
