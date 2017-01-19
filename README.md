@@ -27,6 +27,7 @@ To see coverage do ```composer run test:coverage```.
 - Collections
 	- concat
 	- filter
+	- reject
 	- map
 	- reduce
 	- flatten
@@ -40,6 +41,8 @@ To see coverage do ```composer run test:coverage```.
 - Currying
 	- curry
 	- curryN
+- Logic
+	- not
 - Extras
 	- first
 	- last

@@ -18,6 +18,7 @@
 	"autoload": {
     	"psr-4": {"fphp\\": "src/"},
 		"files": [
+			"src/Utils/reflexify.php",
 			"src/concat.php",
 			"src/curry.php",
 			"src/curryN.php",
@@ -33,7 +34,9 @@
 			"src/last.php",
 			"src/map.php",
 			"src/none.php",
+			"src/not.php",
 			"src/reduce.php",
+			"src/reject.php",
 			"src/zip.php"
 		]
 	},

@@ -2,6 +2,7 @@
 
 namespace fphp;
 
+use function fphp\Utils\reflexify;
 use ReflectionFunction;
 use ReflectionMethod;
 use Closure;
@@ -18,15 +19,7 @@ function curry(callable $f) {
 	if (method_exists('Closure', 'fromCallable')) {
 		$reflection = new ReflectionFunction(Closure::fromCallable($f));
 	} else {
-		if (is_string($f) && strpos($f, '::', 1) !== false) {
-            $reflection = new ReflectionMethod($f);
-        } elseif (is_array($f) && count($f) === 2) {
-            $reflection = new ReflectionMethod($f[0], $f[1]);
-        } elseif (is_object($f) && method_exists($f, '__invoke')) {
-            $reflection = new ReflectionMethod($f, '__invoke');
-        } else {
-            $reflection = new ReflectionFunction($f);
-        }
+		$reflection = reflexify($f);
 	}
 
 	$count = $reflection->getNumberOfRequiredParameters();
