@@ -3,6 +3,7 @@
 namespace fphp;
 
 use ReflectionFunction;
+use ReflectionMethod;
 use Closure;
 
 /**
