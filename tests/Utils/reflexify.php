@@ -4,7 +4,7 @@ use function fphp\Utils\reflexify;
 
 class TestClass {
 	public function __invoke() {
-		echo 'test';
+		return true;
 	}
 
 	static public function staticTest() {
@@ -17,11 +17,11 @@ describe('reflexify', function () {
 		$closure = reflexify('TestClass::staticTest');
 		expect($closure)->toBeAnInstanceOf('ReflectionMethod');
 
-		$closure = reflexify(['DateTime', 'createFromFormat']);
+		$closure = reflexify(['TestClass', 'staticTest']);
 		expect($closure)->toBeAnInstanceOf('ReflectionMethod');
 
-		$invoke = new TestClass();
-		$closure = reflexify($invoke);
+		$test = new TestClass();
+		$closure = reflexify($test);
 		expect($closure)->toBeAnInstanceOf('ReflectionMethod');
 
 		$closure = reflexify('explode');

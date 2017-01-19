@@ -5,7 +5,7 @@ namespace fphp\Utils;
 use ReflectionFunction;
 use ReflectionMethod;
 
-function reflexify($f) {
+function reflexify(callable $f) {
 	if (is_string($f) && strpos($f, '::', 1) !== false) {
 		$reflection = new ReflectionMethod($f);
 	} elseif (is_array($f) && count($f) === 2) {
