@@ -5,7 +5,7 @@
 
 A set of auto-curried immutable data-last functions for PHP. Inspired by lodash/fp.
 
-Requires php >= 5.6.
+Requires php >= 7.0
 
 ## Why use this ?
 
