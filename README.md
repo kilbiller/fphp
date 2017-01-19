@@ -21,26 +21,19 @@ Requires php 7.1 (for now, might change it to 7.0 or even 5.6).
 To run the tests simply do ```composer run test```.
 To see coverage do ```composer run test:coverage```.
 
-## Documentation
+## Functions
 
-### Function composition
-
-* flow
-
-### Currying
-
-* curry
-* curryN
-
-### Functors
-
-* filter
-* map
-* reduce
-* flatten
-* flatMap
-
-### Extras
-
-* first
-* last
+- Collections
+	- filter
+	- map
+	- reduce
+	- flatten
+	- flatMap
+- Function composition
+	- flow
+- Currying
+	- curry
+	- curryN
+- Extras
+	- first
+	-last
