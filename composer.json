@@ -1,6 +1,6 @@
 {
     "name": "kilbiller/fphp",
-    "description": "A set of auto-curried data-last functions for PHP. Inspired by lodash/fp.",
+    "description": "A set of auto-curried immutable data-last functions for PHP. Inspired by lodash/fp.",
     "type": "library",
     "license": "MIT",
     "authors": [
