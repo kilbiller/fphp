@@ -5,7 +5,7 @@
 
 A set of auto-curried immutable data-last functions for PHP. Inspired by lodash/fp.
 
-Requires php 7.1 (for now, might change it to 7.0 or even 5.6).
+Requires php >= 7.0 (for now, might change it to 5.6).
 
 ## Why use this ?
 
@@ -25,6 +25,7 @@ To see coverage do ```composer run test:coverage```.
 ## Functions
 
 - Collections
+	- concat
 	- filter
 	- map
 	- reduce
@@ -33,6 +34,7 @@ To see coverage do ```composer run test:coverage```.
 	- every
 	- none
 	- find
+	- zip
 - Function composition
 	- flow
 - Currying
