@@ -9,8 +9,9 @@ Requires php 7.1 (for now, might change it to 7.0 or even 5.6).
 
 ## Why use this ?
 
-* fphp allows you to easily compose functions
-* Point free programming is awesome
+* Functions are curried and take data as their last argument so you can easily compose them.
+* Enables you to do [point-free programming.](https://en.wikipedia.org/wiki/Tacit_programming)
+* All functions are immutable and have similar interfaces: iteratee-first, data-last with the rest of the parameters in between.
 
 ## How to install
 
@@ -29,6 +30,9 @@ To see coverage do ```composer run test:coverage```.
 	- reduce
 	- flatten
 	- flatMap
+	- every
+	- none
+	- find
 - Function composition
 	- flow
 - Currying
@@ -36,4 +40,5 @@ To see coverage do ```composer run test:coverage```.
 	- curryN
 - Extras
 	- first
-	-last
+	- last
+	- identity

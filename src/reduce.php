@@ -6,13 +6,13 @@ namespace fphp;
  * Reduce a collection to one element
  *
  * @param callable $f callback
- * @param array $data collection
+ * @param array $collection collection
  * @return mixed
  * @author Rémy Peru <peru.remy@gmail.com>
  */
 function reduce(...$args) {
-	$reduce = function (callable $f, $inital, $data) {
-		return array_reduce($data, $f, $inital);
+	$reduce = function (callable $f, $inital, $collection) {
+		return array_reduce($collection, $f, $inital);
 	};
 
 	return curry($reduce)(...$args);

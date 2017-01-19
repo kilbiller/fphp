@@ -10,8 +10,6 @@ namespace fphp;
  * @author Rémy Peru <peru.remy@gmail.com>
  */
 function flow(...$functions) {
-	$identity = function ($x) { return $x; };
-
 	return array_reduce(
 		$functions,
 		function($composed, $f) {
@@ -19,6 +17,6 @@ function flow(...$functions) {
                 return $f($composed($x));
             };
 		},
-		$identity
+		'fphp\identity'
 	);
 }

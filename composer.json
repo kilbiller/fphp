@@ -20,13 +20,18 @@
 		"files": [
 			"src/curry.php",
 			"src/curryN.php",
+			"src/every.php",
 			"src/filter.php",
+			"src/find.php",
 			"src/first.php",
 			"src/flatMap.php",
 			"src/flatten.php",
 			"src/flow.php",
+			"src/identity.php",
+			"src/includes.php",
 			"src/last.php",
 			"src/map.php",
+			"src/none.php",
 			"src/reduce.php"
 		]
 	},
