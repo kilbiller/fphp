@@ -25,11 +25,7 @@ describe('curry', function () {
 		expect($res)->toBe(8);
 	});
 
-	it('should still work for PHP < 7.1', function () {
-		$f = function($a, $b) { return $a + $b; };
-		$curried = curry($f);
-		expect($curried(1)(3))->toBe(4);
-
+	it('should still work for other type of callables', function () {
 		$curried = curry('explode');
 		expect($curried(',')('1,2'))->toBe(['1', '2']);
 	});

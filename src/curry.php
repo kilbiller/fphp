@@ -15,13 +15,7 @@ use Closure;
  * @author Rémy Peru <peru.remy@gmail.com>
  */
 function curry(callable $f) {
-
-	if (method_exists('Closure', 'fromCallable')) {
-		$reflection = new ReflectionFunction(Closure::fromCallable($f));
-	} else {
-		$reflection = reflexify($f);
-	}
-
+	$reflection = reflexify($f);
 	$count = $reflection->getNumberOfRequiredParameters();
 
 	return curryN($f, $count);
