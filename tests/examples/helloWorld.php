@@ -9,7 +9,8 @@ describe('Hello World', function () {
 		$res = flow(
 			'fphp\flatten',
 			'implode',
-			filter(function ($x) {return $x !== 'f'; })
+			filter(function ($x) {return $x !== 'f'; }),
+			'implode'
 		)($str);
 
 		expect($res)->toBe('Hello World !!');

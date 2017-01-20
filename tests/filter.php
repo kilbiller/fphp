@@ -19,4 +19,12 @@ describe('filter', function () {
 
 		expect($res)->toBe(['cat', 'cat', 'cat']);
 	});
+
+	it('should work on strings', function () {
+		$f = function($x) { return $x !== 'N'; };
+
+		$res = filter($f, 'YN');
+
+		expect($res)->toBe(['Y']);
+	});
 });

@@ -14,4 +14,10 @@ describe('concat', function () {
 
 		expect($res)->toBe([1, 2, 3]);
 	});
+
+	it('should concat two strings', function () {
+		$res = concat('hello', ' ', 'world');
+
+		expect($res)->toBe('hello world');
+	});
 });

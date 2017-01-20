@@ -12,19 +12,11 @@ namespace fphp;
  */
 function filter(...$args) {
 	$filter = function (callable $f, $collection) {
-		$isString = false;
 		if (is_string($collection)) {
 			$collection = str_split($collection);
-			$isString = true;
 		}
 
-		$result = array_values(array_filter($collection, $f));
-
-		if ($isString) {
-			$result = implode($result);
-		}
-
-		return $result;
+		return array_values(array_filter($collection, $f));
 	};
 
 	return curryN($filter, 2)(...$args);
