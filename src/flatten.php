@@ -9,18 +9,22 @@ namespace fphp;
  * @return array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function flatten(array $array): array {
-	$flattened = [];
+function flatten(...$args) {
+	$flatten = function($array) {
+		$flattened = [];
 
-	foreach($array as $elem) {
-		if (is_array($elem)) {
-			foreach ($elem as $elem2) {
-				$flattened[] = $elem2;
+		foreach($array as $elem) {
+			if (is_array($elem)) {
+				foreach ($elem as $elem2) {
+					$flattened[] = $elem2;
+				}
+			} else {
+				$flattened[] = $elem;
 			}
-		} else {
-			$flattened[] = $elem;
 		}
-	}
 
-	return $flattened;
+		return $flattened;
+	};
+
+	return curryN($flatten, 1)(...$args);
 }

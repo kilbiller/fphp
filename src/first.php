@@ -9,6 +9,10 @@ namespace fphp;
  * @return mixed
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function first(array $array) {
-	return array_values($array)[0];
+function first(...$args) {
+	$first = function ($array) {
+		return array_values($array)[0];
+	};
+
+	return curryN($first, 1)(...$args);
 }

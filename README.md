@@ -17,6 +17,10 @@ Requires php >= 7.0
 
 ```composer require kilbiller/fphp```
 
+## Pro tips
+* Functions with an arity of one are also curried so you can avoid using a callable to compose them:
+```flow(flatten())([1, [2, 3]]) ==> [1, 2, 3]```
+
 ## Tests
 
 To run the tests simply do ```composer run test```.

@@ -14,4 +14,10 @@ describe('not', function () {
 
 		expect($res)->toBe(false);
 	});
+
+	it('should be curried', function () {
+		$res = not()(true);
+
+		expect($res)->toBe(false);
+	});
 });

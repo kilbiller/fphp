@@ -2,6 +2,10 @@
 
 namespace fphp;
 
-function identity($value) {
-	return $value;
+function identity(...$args) {
+	$identity = function ($value) {
+		return $value;
+	};
+
+	return curryN($identity, 1)(...$args);
 }

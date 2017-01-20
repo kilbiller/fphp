@@ -10,4 +10,12 @@ describe('flatten', function () {
 
 		expect($res)->toBe([1, 2, 3, [4, [5, 6], 7], 8, 9]);
 	});
+
+	it('should be curried', function () {
+		$f = function($x) { return [$x, $x]; };
+
+		$res = flatten()([1, 2, [3, [4, [5, 6], 7], 8], 9]);
+
+		expect($res)->toBe([1, 2, 3, [4, [5, 6], 7], 8, 9]);
+	});
 });

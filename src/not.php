@@ -9,6 +9,10 @@ namespace fphp;
  * @return mixed
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function not($value) {
-	return !$value;
+function not(...$args) {
+	$not = function ($value) {
+		return !$value;
+	};
+
+	return curryN($not, 1)(...$args);
 }
