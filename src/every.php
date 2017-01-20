@@ -20,5 +20,5 @@ function every(...$args) {
 		return true;
 	};
 
-	return curry($every)(...$args);
+	return curryN($every, 2)(...$args);
 }

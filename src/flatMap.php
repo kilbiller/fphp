@@ -15,5 +15,5 @@ function flatMap(...$args) {
 		return flatten(map($f, $collection));
 	};
 
-	return curry($flatMap)(...$args);
+	return curryN($flatMap, 2)(...$args);
 }

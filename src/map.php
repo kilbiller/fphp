@@ -15,5 +15,5 @@ function map(...$args) {
 		return array_map($f, $collection);
 	};
 
-	return curry($map)(...$args);
+	return curryN($map, 2)(...$args);
 }

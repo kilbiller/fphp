@@ -21,5 +21,5 @@ function find(...$args) {
 		return null;
 	};
 
-	return curry($find)(...$args);
+	return curryN($find, 2)(...$args);
 }

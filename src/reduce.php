@@ -15,5 +15,5 @@ function reduce(...$args) {
 		return array_reduce($collection, $f, $inital);
 	};
 
-	return curry($reduce)(...$args);
+	return curryN($reduce, 3)(...$args);
 }

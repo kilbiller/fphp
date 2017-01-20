@@ -23,5 +23,5 @@ function zip(...$args) {
 		return $collection;
 	};
 
-	return curry($zip)(...$args);
+	return curryN($zip, 2)(...$args);
 }

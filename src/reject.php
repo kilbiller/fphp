@@ -22,5 +22,5 @@ function reject(...$args) {
 	    return $result;
 	};
 
-	return curry($reject)(...$args);
+	return curryN($reject, 2)(...$args);
 }

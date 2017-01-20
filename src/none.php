@@ -21,5 +21,5 @@ function none(...$args) {
 		return true;
 	};
 
-	return curry($none)(...$args);
+	return curryN($none, 2)(...$args);
 }

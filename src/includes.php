@@ -21,5 +21,5 @@ function includes(...$args) {
 		return false;
 	};
 
-	return curry($includes)(...$args);
+	return curryN($includes, 2)(...$args);
 }

@@ -27,5 +27,5 @@ function filter(...$args) {
 		return $result;
 	};
 
-	return curry($filter)(...$args);
+	return curryN($filter, 2)(...$args);
 }
