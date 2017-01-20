@@ -31,6 +31,7 @@
 			"src/flow.php",
 			"src/identity.php",
 			"src/includes.php",
+			"src/join.php",
 			"src/last.php",
 			"src/map.php",
 			"src/none.php",

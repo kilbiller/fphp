@@ -25,7 +25,7 @@ You can also check code coverage by running ```composer run test:coverage```.
 ## Functions
 
 - Collections
-	- concat
+	- join
 	- filter
 	- reject
 	- map
@@ -47,3 +47,4 @@ You can also check code coverage by running ```composer run test:coverage```.
 	- first
 	- last
 	- identity
+	- concat
