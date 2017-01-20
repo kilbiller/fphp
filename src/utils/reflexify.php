@@ -1,6 +1,6 @@
 <?php
 
-namespace fphp\Utils;
+namespace fphp\utils;
 
 use ReflectionFunction;
 use ReflectionMethod;

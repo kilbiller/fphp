@@ -1,6 +1,6 @@
 <?php
 
-use function fphp\Utils\reflexify;
+use function fphp\utils\reflexify;
 
 class TestClass {
 	public function __invoke() {

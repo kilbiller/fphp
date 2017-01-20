@@ -2,7 +2,7 @@
 
 namespace fphp;
 
-use function fphp\Utils\reflexify;
+use function fphp\utils\reflexify;
 use ReflectionFunction;
 use ReflectionMethod;
 use Closure;
