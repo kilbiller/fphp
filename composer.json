@@ -19,6 +19,7 @@
     	"psr-4": {"fphp\\": "src/"},
 		"files": [
 			"src/utils/reflexify.php",
+			"src/compose.php",
 			"src/concat.php",
 			"src/curry.php",
 			"src/curryN.php",
@@ -38,6 +39,7 @@
 			"src/not.php",
 			"src/reduce.php",
 			"src/reject.php",
+			"src/reverse.php",
 			"src/zip.php"
 		]
 	},

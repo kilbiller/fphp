@@ -42,8 +42,10 @@ You can also check code coverage by running ```composer run test:coverage```.
 	- none
 	- find
 	- zip
+	- reverse
 - Function composition
 	- flow
+	- compose
 - Currying
 	- curry
 	- curryN
