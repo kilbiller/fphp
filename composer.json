@@ -40,6 +40,7 @@
 			"src/reduce.php",
 			"src/reject.php",
 			"src/reverse.php",
+			"src/some.php",
 			"src/zip.php"
 		]
 	},

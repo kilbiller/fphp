@@ -43,6 +43,7 @@ You can also check code coverage by running ```composer run test:coverage```.
 	- find
 	- zip
 	- reverse
+	- some
 - Function composition
 	- flow
 	- compose
