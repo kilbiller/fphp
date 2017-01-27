@@ -27,4 +27,12 @@ describe('filter', function () {
 
 		expect($res)->toBe(['Y']);
 	});
+
+	it('should work with non contiguous arrays', function () {
+		$f = function($x) { return $x !== 'dog'; };
+
+		$res = filter($f, [1 => 'cat', 3 => 'cat', 8 => 'dog', 6 => 'cat', 12 => 'dog']);
+
+		expect($res)->toBe(['cat', 'cat', 'cat']);
+	});
 });

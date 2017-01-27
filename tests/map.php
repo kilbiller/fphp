@@ -19,4 +19,13 @@ describe('map', function () {
 
 		expect($res)->toBe([2, 3]);
 	});
+
+	it('should work with non contiguous arrays', function () {
+		$f = function($x) { return $x + 1; };
+
+		$res = map($f);
+		$res = $res([0 => 1, 4 => 2]);
+
+		expect($res)->toBe([2, 3]);
+	});
 });

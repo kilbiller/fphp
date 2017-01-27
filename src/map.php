@@ -12,7 +12,7 @@ namespace fphp;
  */
 function map(...$args) {
 	$map = function (callable $f, $collection) {
-		return array_map($f, $collection);
+		return array_values(array_map($f, $collection));
 	};
 
 	return curryN($map, 2)(...$args);
