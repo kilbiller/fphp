@@ -9,16 +9,16 @@
     "packages-dev": [
         {
             "name": "kahlan/kahlan",
-            "version": "3.1.5",
+            "version": "3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kahlan/kahlan.git",
-                "reference": "f7c8ad7edc454e9d0a7eef92b9c5ef6be51b2676"
+                "reference": "2c236d36d7ed317f34cea1f37484db1c03cb1062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kahlan/kahlan/zipball/f7c8ad7edc454e9d0a7eef92b9c5ef6be51b2676",
-                "reference": "f7c8ad7edc454e9d0a7eef92b9c5ef6be51b2676",
+                "url": "https://api.github.com/repos/kahlan/kahlan/zipball/2c236d36d7ed317f34cea1f37484db1c03cb1062",
+                "reference": "2c236d36d7ed317f34cea1f37484db1c03cb1062",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "testing",
                 "unit test"
             ],
-            "time": "2017-01-09T20:37:54+00:00"
+            "time": "2017-01-30T18:20:46+00:00"
         }
     ],
     "aliases": [],

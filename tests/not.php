@@ -20,4 +20,10 @@ describe('not', function () {
 
 		expect($res)->toBe(false);
 	});
+
+	it('should work with functions', function () {
+		$predicate = function ($x) { return $x === 'orange'; };
+
+		expect(not($predicate('orange')))->toBe(false);
+	});
 });

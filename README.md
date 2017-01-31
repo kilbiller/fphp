@@ -44,6 +44,8 @@ You can also check code coverage by running ```composer run test:coverage```.
 	- zip
 	- reverse
 	- some
+	- first
+	- last
 - Function composition
 	- flow
 	- compose
@@ -52,8 +54,9 @@ You can also check code coverage by running ```composer run test:coverage```.
 	- curryN
 - Logic
 	- not
+- Functions
+	- negate
+	- flip
 - Extras
-	- first
-	- last
 	- identity
 	- concat
