@@ -43,6 +43,7 @@
 			"src/reject.php",
 			"src/reverse.php",
 			"src/some.php",
+			"src/uniq.php",
 			"src/zip.php"
 		]
 	},
