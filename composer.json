@@ -44,6 +44,7 @@
 			"src/reverse.php",
 			"src/some.php",
 			"src/uniq.php",
+			"src/uniqWith.php",
 			"src/zip.php"
 		]
 	},

@@ -11,15 +11,11 @@ namespace fphp;
  */
 function uniq(...$args) {
 	$uniq = function (array $collection) {
-		$uniqArray = [];
+		$isEqual = function ($a, $b) {
+			return $a == $b;
+		};
 
-		foreach($collection as $item) {
-			if (!includes($item, $uniqArray)) {
-				$uniqArray[] = $item;
-			}
-		}
-
-		return $uniqArray;
+		return uniqWith($isEqual, $collection);
 	};
 
 	return curryN($uniq, 1)(...$args);
