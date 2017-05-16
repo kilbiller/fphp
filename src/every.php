@@ -7,11 +7,11 @@ namespace fphp;
  *
  * @param callable $f predicate
  * @param array $collection collection
- * @return bolean Returns true if all elements pass the predicate check, else false.
+ * @return boolean Returns true if all elements pass the predicate check, else false.
  * @author Rémy Peru <peru.remy@gmail.com>
  */
 function every(...$args) {
-	$every = function(callable $f, $collection) {
+	$every = function (callable $f, $collection) {
 		foreach ($collection as $element) {
 	        if (!$f($element)) {
 	            return false;

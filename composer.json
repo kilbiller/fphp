@@ -39,6 +39,7 @@
 			"src/negate.php",
 			"src/none.php",
 			"src/not.php",
+			"src/prop.php",
 			"src/reduce.php",
 			"src/reject.php",
 			"src/reverse.php",

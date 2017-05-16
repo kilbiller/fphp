@@ -48,6 +48,7 @@ You can also check code coverage by running ```composer run test:coverage```.
 	- last
 	- uniq
 	- uniqWith
+	- prop
 - Function composition
 	- flow
 	- compose
