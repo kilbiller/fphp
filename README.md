@@ -54,6 +54,9 @@ You can also check code coverage by running ```composer run test:coverage```.
 	- compose
 - Currying
 	- curry
+	- curry1
+	- curry2
+	- curry3
 	- curryN
 - Logic
 	- not

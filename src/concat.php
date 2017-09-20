@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -10,13 +12,13 @@ namespace fphp;
  * @return string|array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function concat(...$args) {
-	$concat = function ($a, $b) {
+function concat($a = null, $b = null) {
+	$concat = curry2(function ($a, $b) {
 		if (every('is_string', [$a, $b])) {
 			return $a . $b;
 		}
 		return array_merge($a, $b);
-	};
+	});
 
-	return curryN($concat, 2)(...$args);
+	return $concat(...func_get_args());
 }

@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\reject;
 
 describe('reject', function () {
 	it('should keep every dogs', function () {
-		$f = function($x) { return $x !== 'dog'; };
+		$f = function ($x) {
+			return $x !== 'dog';
+		};
 
 		$res = reject($f, ['cat', 'cat', 'dog', 'cat', 'dog']);
 
@@ -12,7 +16,9 @@ describe('reject', function () {
 	});
 
 	it('should be curried', function () {
-		$f = function($x) { return $x !== 'dog'; };
+		$f = function ($x) {
+			return $x !== 'dog';
+		};
 
 		$res = reject($f);
 		$res = $res(['cat', 'cat', 'dog', 'cat', 'dog']);

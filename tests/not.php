@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\not;
 
 describe('not', function () {
@@ -22,7 +24,9 @@ describe('not', function () {
 	});
 
 	it('should work with functions', function () {
-		$predicate = function ($x) { return $x === 'orange'; };
+		$predicate = function ($x) {
+			return $x === 'orange';
+		};
 
 		expect(not($predicate('orange')))->toBe(false);
 	});

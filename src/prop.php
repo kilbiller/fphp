@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -10,8 +12,8 @@ namespace fphp;
  * @return mixed Returns array key.
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function prop(...$args) {
-	$prop = function ($key, $collection) {
+function prop($key = null, $collection = null) {
+	$prop = curry2(function ($key, $collection) {
 		$keys = explode('.', $key);
 		$result = $collection;
 
@@ -24,7 +26,7 @@ function prop(...$args) {
 		}
 
 		return $result;
-	};
+	});
 
-	return curryN($prop, 2)(...$args);
+	return $prop(...func_get_args());
 }

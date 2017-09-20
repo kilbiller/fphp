@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -9,11 +11,11 @@ namespace fphp;
  * @return array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function flatten(...$args) {
-	$flatten = function($array) {
+function flatten($array = null) {
+	$flatten = curry1(function ($array) {
 		$flattened = [];
 
-		foreach($array as $elem) {
+		foreach ($array as $elem) {
 			if (is_array($elem)) {
 				foreach ($elem as $elem2) {
 					$flattened[] = $elem2;
@@ -24,7 +26,7 @@ function flatten(...$args) {
 		}
 
 		return $flattened;
-	};
+	});
 
-	return curryN($flatten, 1)(...$args);
+	return $flatten(...func_get_args());
 }

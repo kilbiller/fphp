@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -9,10 +11,10 @@ namespace fphp;
  * @return mixed
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function not(...$args) {
-	$not = function ($value) {
+function not($value = null) {
+	$not = curry1(function ($value) {
 		return !$value;
-	};
+	});
 
-	return curryN($not, 1)(...$args);
+	return $not(...func_get_args());
 }

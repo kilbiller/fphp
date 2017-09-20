@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -7,19 +9,19 @@ namespace fphp;
  *
  * @param callable $f predicate
  * @param array $collection collection
- * @return bolean Returns the element if found, else null.
+ * @return bool Returns the element if found, else null.
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function find(...$args) {
-	$find = function(callable $f, $collection) {
+function find($f = null, $collection = null) {
+	$find = curry2(function (callable $f, $collection) {
 		foreach ($collection as $element) {
-	        if ($f($element)) {
-	            return $element;
-	        }
-    	}
+			if ($f($element)) {
+				return $element;
+			}
+		}
 
 		return null;
-	};
+	});
 
-	return curryN($find, 2)(...$args);
+	return $find(...func_get_args());
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -9,10 +11,10 @@ namespace fphp;
  * @return mixed
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function first(...$args) {
-	$first = function ($array) {
+function first($array = null) {
+	$first = curry1(function ($array) {
 		return array_values($array)[0];
-	};
+	});
 
-	return curryN($first, 1)(...$args);
+	return $first(...func_get_args());
 }

@@ -10,10 +10,12 @@
         }
     ],
 	"require": {
-		"php": ">=7.0"
+		"php": ">=7.1"
 	},
     "require-dev": {
-        "kahlan/kahlan": "^3.1"
+		"kahlan/kahlan": "^3.1",
+		"squizlabs/php_codesniffer": "^3.0",
+		"consistence/coding-standard": "^2.1"
     },
 	"autoload": {
     	"psr-4": {"fphp\\": "src/"},
@@ -22,6 +24,9 @@
 			"src/compose.php",
 			"src/concat.php",
 			"src/curry.php",
+			"src/curry1.php",
+			"src/curry2.php",
+			"src/curry3.php",
 			"src/curryN.php",
 			"src/every.php",
 			"src/filter.php",
@@ -50,6 +55,7 @@
 		]
 	},
 	"scripts": {
+		"lint": "phpcs -sp src tests",
 		"test": "kahlan",
 		"test:coverage": "kahlan --coverage=4 --clover=clover.xml"
 	}

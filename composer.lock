@@ -4,9 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1672aee7053b7cd4b8a3b123c7369a2",
+    "content-hash": "26c53d540695739146de17319fcb327a",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "consistence/coding-standard",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/consistence/coding-standard.git",
+                "reference": "2bafec27a5ab307019dfc04f4001c95879ce5e3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/consistence/coding-standard/zipball/2bafec27a5ab307019dfc04f4001c95879ce5e3a",
+                "reference": "2bafec27a5ab307019dfc04f4001c95879ce5e3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.0",
+                "slevomat/coding-standard": "~4.0",
+                "squizlabs/php_codesniffer": "~3.0.1"
+            },
+            "require-dev": {
+                "jakub-onderka/php-console-highlighter": "0.3.2",
+                "jakub-onderka/php-parallel-lint": "0.9.2",
+                "phing/phing": "2.16",
+                "phpunit/phpunit": "6.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Consistence\\": [
+                        "Consistence"
+                    ]
+                },
+                "classmap": [
+                    "Consistence"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vašek Purchart",
+                    "email": "me@vasekpurchart.cz",
+                    "homepage": "http://vasekpurchart.cz"
+                }
+            ],
+            "description": "Consistence - Coding Standard - PHP Code Sniffer rules",
+            "keywords": [
+                "Coding Standard",
+                "PHPCodeSniffer",
+                "codesniffer",
+                "coding",
+                "cs",
+                "phpcs",
+                "ruleset",
+                "sniffer",
+                "standard"
+            ],
+            "time": "2017-09-16T13:43:33+00:00"
+        },
         {
             "name": "kahlan/kahlan",
             "version": "3.1.18",
@@ -60,6 +121,94 @@
                 "unit test"
             ],
             "time": "2017-08-12T20:37:11+00:00"
+        },
+        {
+            "name": "slevomat/coding-standard",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slevomat/coding-standard.git",
+                "reference": "bab653d0f7f2e3ed13796f7803067d252f00a25a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/bab653d0f7f2e3ed13796f7803067d252f00a25a",
+                "reference": "bab653d0f7f2e3ed13796f7803067d252f00a25a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "squizlabs/php_codesniffer": "^3.0.1"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "0.9.2",
+                "phing/phing": "2.16",
+                "phpstan/phpstan": "0.8.4",
+                "phpunit/phpunit": "6.3.0"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "psr-4": {
+                    "SlevomatCodingStandard\\": "SlevomatCodingStandard"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
+            "time": "2017-09-15T17:47:36+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "c7594a88ae75401e8f8d0bd4deb8431b39045c51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/c7594a88ae75401e8f8d0bd4deb8431b39045c51",
+                "reference": "c7594a88ae75401e8f8d0bd4deb8431b39045c51",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2017-07-18T01:12:32+00:00"
         }
     ],
     "aliases": [],
@@ -68,7 +217,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0"
+        "php": ">=7.1"
     },
     "platform-dev": []
 }

@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\reduce;
 
 describe('reduce', function () {
 	it('should add every element', function () {
-		$f = function($carry, $x) { return $carry + $x; };
+		$f = function ($carry, $x) {
+			return $carry + $x;
+		};
 
 		$res = reduce($f, 0, [1, 2]);
 
@@ -12,7 +16,9 @@ describe('reduce', function () {
 	});
 
 	it('should be curried', function () {
-		$f = function($carry, $x) { return $carry + $x; };
+		$f = function ($carry, $x) {
+			return $carry + $x;
+		};
 
 		$res = reduce($f);
 		$res = $res(0);

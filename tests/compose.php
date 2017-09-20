@@ -1,12 +1,20 @@
 <?php
 
-use function fphp\{compose, filter, map};
+declare(strict_types = 1);
+
+use function fphp\compose;
+use function fphp\filter;
+use function fphp\map;
 
 describe('compose', function () {
 	it('should compose filter and map', function () {
-		$keepOnlyTwos = filter(function($x) { return $x == 2; });
+		$keepOnlyTwos = filter(function ($x) {
+			return $x == 2;
+		});
 
-		$multiplyByTwo = map(function($x) { return $x * 2; });
+		$multiplyByTwo = map(function ($x) {
+			return $x * 2;
+		});
 
 		$res = compose(
 			$multiplyByTwo,

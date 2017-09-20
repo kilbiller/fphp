@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -7,19 +9,19 @@ namespace fphp;
  *
  * @param callable $f predicate
  * @param array $collection collection
- * @return bolean Returns true if all elements pass the predicate check, else false.
+ * @return bool Returns true if all elements pass the predicate check, else false.
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function none(...$args) {
-	$none = function(callable $f, $collection) {
+function none($f = null, $collection = null) {
+	$none = curry2(function (callable $f, $collection) {
 		foreach ($collection as $element) {
-	        if ($f($element)) {
-	            return false;
-	        }
-    	}
+			if ($f($element)) {
+				return false;
+			}
+		}
 
 		return true;
-	};
+	});
 
-	return curryN($none, 2)(...$args);
+	return $none(...func_get_args());
 }

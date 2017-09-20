@@ -1,19 +1,21 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\uniq;
 
 describe('uniq', function () {
 	it('should return input array without duplicates', function () {
-		$res = uniq([1, 2, 3, 3 ,4 ,5 , 'orange', 'green', 'orange']);
+		$res = uniq([1, 2, 3, 3, 4, 5, 'orange', 'green', 'orange']);
 
-		expect($res)->toBe([1, 2, 3, 4 ,5 , 'orange', 'green']);
+		expect($res)->toBe([1, 2, 3, 4, 5, 'orange', 'green']);
 	});
 
 	it('should be curried', function () {
 		$res = uniq();
-		$res = $res([1, 2, 3, 3 ,4 ,5 , 'orange', 'green', 'orange']);
+		$res = $res([1, 2, 3, 3, 4, 5, 'orange', 'green', 'orange']);
 
-		expect($res)->toBe([1, 2, 3, 4 ,5 , 'orange', 'green']);
+		expect($res)->toBe([1, 2, 3, 4, 5, 'orange', 'green']);
 	});
 
 	it('should work with non contiguous arrays', function () {

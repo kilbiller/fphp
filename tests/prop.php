@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\prop;
 
 describe('prop', function () {
@@ -14,8 +16,8 @@ describe('prop', function () {
 	it('should work on nested values', function () {
 		$array = [
 			'user' => [
-				'age' => 38
-			]
+				'age' => 38,
+			],
 		];
 
 		$res = prop('user.age', $array);
@@ -26,8 +28,8 @@ describe('prop', function () {
 	it('should return null when key doesn\'t exist', function () {
 		$array = [
 			'user' => [
-				'age' => 38
-			]
+				'age' => 38,
+			],
 		];
 
 		$res = prop('user.firstname', $array);

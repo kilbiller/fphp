@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -10,8 +12,8 @@ namespace fphp;
  * @return bool Returns true if value exist in collection, else false.
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function includes(...$args) {
-	$includes = function($value, $collection) {
+function includes($value = null, $collection = null) {
+	$includes = curry2(function ($value, $collection) {
 		foreach ($collection as $element) {
 			if ($element === $value) {
 				return true;
@@ -19,7 +21,7 @@ function includes(...$args) {
 		}
 
 		return false;
-	};
+	});
 
-	return curryN($includes, 2)(...$args);
+	return $includes(...func_get_args());
 }

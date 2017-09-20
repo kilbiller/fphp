@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -7,20 +9,20 @@ namespace fphp;
  *
  * @param callable $f function
  * @param array $collection collection
- * @return $array
+ * @return array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function reject(...$args) {
-	$reject = function (callable $f, $collection) {
+function reject($f = null, $collection = null) {
+	$reject = curry2(function (callable $f, $collection) {
 		$result = [];
-	    foreach ($collection as $element) {
-	        if (!$f($element)) {
-	            $result[] = $element;
-	        }
-	    }
+		foreach ($collection as $element) {
+			if (!$f($element)) {
+				$result[] = $element;
+			}
+		}
 
-	    return $result;
-	};
+		return $result;
+	});
 
-	return curryN($reject, 2)(...$args);
+	return $reject(...func_get_args());
 }

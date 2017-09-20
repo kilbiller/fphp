@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -9,10 +11,10 @@ namespace fphp;
  * @return mixed
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function last(...$args) {
-	$last = function(array $array) {
+function last($array = null) {
+	$last = curry1(function (array $array) {
 		return array_values(array_slice($array, -1))[0];
-	};
+	});
 
-	return curryN($last, 1)(...$args);
+	return $last(...func_get_args());
 }

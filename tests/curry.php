@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\curry;
 
 describe('curry', function () {
 	it('should curry a function with 2 args', function () {
-		$f = function($a, $b) { return $a + $b; };
+		$f = function ($a, $b) {
+			return $a + $b;
+		};
 
 		$curried = curry($f);
 
@@ -15,7 +19,9 @@ describe('curry', function () {
 	});
 
 	it('should curry a function with 3 args', function () {
-		$f = function($a, $b, $c) { return $a + $b + $c; };
+		$f = function ($a, $b, $c) {
+			return $a + $b + $c;
+		};
 
 		$curried = curry($f);
 

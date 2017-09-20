@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -7,12 +9,12 @@ namespace fphp;
  * Result is truncated to the shortest list length.
  *
  * @param array $a first collection
- * @param array $a second collection
+ * @param array $b second collection
  * @return array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function zip(...$args) {
-	$zip = function ($a, $b) {
+function zip($a = null, $b = null) {
+	$zip = curry2(function ($a, $b) {
 		$length = min(count($a), count($b));
 
 		$collection = [];
@@ -21,7 +23,7 @@ function zip(...$args) {
 		}
 
 		return $collection;
-	};
+	});
 
-	return curryN($zip, 2)(...$args);
+	return $zip(...func_get_args());
 }

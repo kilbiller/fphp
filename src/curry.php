@@ -1,11 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 use function fphp\utils\reflexify;
-use ReflectionFunction;
-use ReflectionMethod;
-use Closure;
 
 /**
  * Curry a function

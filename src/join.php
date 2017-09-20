@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -10,10 +12,10 @@ namespace fphp;
  * @return string
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function join(...$args) {
-	$join = function($separator, $collection) {
+function join($separator = null, $collection = null) {
+	$join = curry2(function ($separator, $collection) {
 		return implode($separator, $collection);
-	};
+	});
 
-	return curryN($join, 2)(...$args);
+	return $join(...func_get_args());
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ruleset name="kilbiller">
+	<description>kilbiller PHP coding standard</description>
+
+	<rule ref="vendor/consistence/coding-standard/Consistence/ruleset.xml">
+		<exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" />
+		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />
+		<exclude name="PEAR.Classes.ClassDeclaration.OpenBraceNewLine" />
+		<exclude name="Generic.Formatting.SpaceAfterCast.NoSpace" />
+		<exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps" />
+		<exclude name="Squiz.Arrays.ArrayDeclaration.NoKeySpecified" />
+		<exclude name="Squiz.Arrays.ArrayDeclaration.KeySpecified" />
+		<exclude name="Squiz.Functions.GlobalFunction.Found" />
+		<exclude name="SlevomatCodingStandard.ControlStructures.RequireYodaComparison.RequiredYodaComparison" />
+
+		<!-- Reconsider later -->
+		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameAfterKeyword.NonFullyQualifiedExtends" />
+		<exclude name="PSR1.Files.SideEffects.FoundWithSymbols" />
+		<exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+		<exclude name="Squiz.Classes.ClassFileName.NoMatch" />
+
+		<!-- Causes bugs -->
+		<exclude name="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses.IncorrectlyOrderedUses" />
+	</rule>
+
+	<rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
+		<exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName.NoMatchBetweenTypeNameAndFileName" />
+		<exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces.NonFullyQualified" />
+		<exclude name="Generic.Commenting.Todo.TaskFound" />
+		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions.NonFullyQualified" />
+		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants.NonFullyQualified" />
+
+		<!-- Reconsider later -->
+		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification" />
+		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification" />
+		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingPropertyTypeHint" />
+		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint" />
+		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingReturnTypeHint" />
+		<exclude name="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators.DisallowedEqualOperator" />
+		<exclude name="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators.DisallowedNotEqualOperator" />
+		<exclude name="SlevomatCodingStandard.Classes.ClassConstantVisibility.MissingConstantVisibility" />
+	</rule>
+
+	<!-- Custom rules -->
+	<rule ref="Generic.Classes.OpeningBraceSameLine" />
+	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.SpaceBeforeBrace" />
+	<rule ref="Generic.Formatting.NoSpaceAfterCast" />
+
+</ruleset>

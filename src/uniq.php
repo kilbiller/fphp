@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -9,14 +11,14 @@ namespace fphp;
  * @return array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function uniq(...$args) {
-	$uniq = function (array $collection) {
+function uniq($collection = null) {
+	$uniq = curry1(function (array $collection) {
 		$isEqual = function ($a, $b) {
 			return $a == $b;
 		};
 
 		return uniqWith($isEqual, $collection);
-	};
+	});
 
-	return curryN($uniq, 1)(...$args);
+	return $uniq(...func_get_args());
 }

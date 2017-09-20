@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -10,10 +12,10 @@ namespace fphp;
  * @return array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function map(...$args) {
-	$map = function (callable $f, $collection) {
+function map($f = null, $collection = null) {
+	$map = curry2(function (callable $f, array $collection) {
 		return array_values(array_map($f, $collection));
-	};
+	});
 
-	return curryN($map, 2)(...$args);
+	return $map(...func_get_args());
 }

@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\flatMap;
 
 describe('flatMap', function () {
 	it('should duplicate every element of the array', function () {
-		$f = function($x) { return [$x, $x]; };
+		$f = function ($x) {
+			return [$x, $x];
+		};
 
 		$res = flatMap($f, [1, 2]);
 
@@ -12,7 +16,9 @@ describe('flatMap', function () {
 	});
 
 	it('should be curried', function () {
-		$f = function($x) { return [$x, $x]; };
+		$f = function ($x) {
+			return [$x, $x];
+		};
 
 		$res = flatMap($f);
 		$res = $res([1, 2]);

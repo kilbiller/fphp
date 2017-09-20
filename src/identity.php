@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
-function identity(...$args) {
-	$identity = function ($value) {
+function identity($value = null) {
+	$identity = curry1(function ($value) {
 		return $value;
-	};
+	});
 
-	return curryN($identity, 1)(...$args);
+	return $identity(...func_get_args());
 }

@@ -1,15 +1,19 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\utils\reflexify;
 
 class TestClass {
+
 	public function __invoke() {
 		return true;
 	}
 
-	static public function staticTest() {
+	public static function staticTest() {
 		return true;
 	}
+
 }
 
 describe('reflexify', function () {
@@ -27,7 +31,9 @@ describe('reflexify', function () {
 		$closure = reflexify('explode');
 		expect($closure)->toBeAnInstanceOf('ReflectionFunction');
 
-		$f = function($a, $b) { return $a + $b; };
+		$f = function ($a, $b) {
+			return $a + $b;
+		};
 		$closure = reflexify($f);
 		expect($closure)->toBeAnInstanceOf('ReflectionMethod');
 	});

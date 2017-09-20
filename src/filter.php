@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace fphp;
 
 /**
@@ -10,14 +12,14 @@ namespace fphp;
  * @return array
  * @author Rémy Peru <peru.remy@gmail.com>
  */
-function filter(...$args) {
-	$filter = function (callable $f, $collection) {
+function filter($f = null, $collection = null) {
+	$filter = curry2(function (callable $f, $collection) {
 		if (is_string($collection)) {
 			$collection = str_split($collection);
 		}
 
 		return array_values(array_filter($collection, $f));
-	};
+	});
 
-	return curryN($filter, 2)(...$args);
+	return $filter(...func_get_args());
 }

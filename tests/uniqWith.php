@@ -1,26 +1,27 @@
 <?php
 
+declare(strict_types = 1);
+
 use function fphp\uniqWith;
 
 describe('uniqWith', function () {
-
 	beforeEach(function () {
-		$this->comparator = function($a, $b) {
+		$this->comparator = function ($a, $b) {
 			return $a === $b;
 		};
 	});
 
 	it('should return input array without duplicates', function () {
-		$res = uniqWith($this->comparator, [1, 2, 3, 3 ,4 ,5 , 'orange', 'green', 'orange']);
+		$res = uniqWith($this->comparator, [1, 2, 3, 3, 4, 5, 'orange', 'green', 'orange']);
 
-		expect($res)->toBe([1, 2, 3, 4 ,5 , 'orange', 'green']);
+		expect($res)->toBe([1, 2, 3, 4, 5, 'orange', 'green']);
 	});
 
 	it('should be curried', function () {
 		$res = uniqWith($this->comparator);
-		$res = $res([1, 2, 3, 3 ,4 ,5 , 'orange', 'green', 'orange']);
+		$res = $res([1, 2, 3, 3, 4, 5, 'orange', 'green', 'orange']);
 
-		expect($res)->toBe([1, 2, 3, 4 ,5 , 'orange', 'green']);
+		expect($res)->toBe([1, 2, 3, 4, 5, 'orange', 'green']);
 	});
 
 	it('should work with non contiguous arrays', function () {
@@ -34,8 +35,8 @@ describe('uniqWith', function () {
 			'items' => [
 				['user' => '1444', 'ticket' => '2ae6eeb0-0a75-11e7-93ae-92361f002671'],
 				['user' => '1222', 'ticket' => '2ae6eeb0-0a75-11e7-93ae-92361f002671'],
-				['user' => '1444', 'ticket' => '2ae6eeb0-0a75-11e7-93ae-92361f002671']
-			]
+				['user' => '1444', 'ticket' => '2ae6eeb0-0a75-11e7-93ae-92361f002671'],
+			],
 		];
 
 		$comparator = function ($a, $b) {
@@ -44,7 +45,7 @@ describe('uniqWith', function () {
 
 		$expected = [
 			['user' => '1444', 'ticket' => '2ae6eeb0-0a75-11e7-93ae-92361f002671'],
-			['user' => '1222', 'ticket' => '2ae6eeb0-0a75-11e7-93ae-92361f002671']
+			['user' => '1222', 'ticket' => '2ae6eeb0-0a75-11e7-93ae-92361f002671'],
 		];
 
 		$res = uniqWith($comparator, $order['items']);
