@@ -13,6 +13,7 @@ namespace fphp;
  */
 function first($array = null) {
 	$first = curry1(function ($array) {
+		$array = !empty($array) ? $array : [null];
 		return array_values($array)[0];
 	});
 

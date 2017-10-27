@@ -12,4 +12,8 @@ describe('first', function () {
 	it('should be curried', function () {
 		expect(first()([1, 2, 3, 4]))->toBe(1);
 	});
+
+	it('should return null when array is empty', function () {
+		expect(first([]))->toBe(null);
+	});
 });
