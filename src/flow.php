@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace fphp;
 
 /**
- * Compose functions form left to right
+ * Compose functions from left to right
  *
  * @param callable ...$functions list of functions to compose
  * @return callable
